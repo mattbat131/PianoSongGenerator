@@ -2,8 +2,10 @@ import sqlalchemy
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import Column, Integer, String, create_engine
+from sqlalchemy.dialects import sqlite
 import mingus
 import fluidsynth
+import pickle
 
 Base = declarative_base()
 
@@ -71,7 +73,7 @@ def main():
     sound = Sound(beat)
     play_sound(sound)
     rank = get_rank()
-    song = Songs(rank, sound)
+    song = Songs(rank, pickle.dumps(sound))
     session = Session()
     session.add(song)
     session.commit()
