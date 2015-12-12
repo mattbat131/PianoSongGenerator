@@ -5,17 +5,17 @@ import cgitb
 cgitb.enable()
 
 def htmlTop():
-    print('''<!DOCTYPE html>
+    print '''<!DOCTYPE html>
             <html lang="en-us">
             <head>
                 <meta charset="UTF-8">
                 <title>PianoSongGenerator by mattbat131</title>
             </head>
-            <body>''')
+            <body>'''
 
 def htmlBot():
-    print('''</body>
-            </html>''')
+    print '''</body>
+            </html>'''
 
 
 def getData():
@@ -23,9 +23,9 @@ def getData():
     rating = formData.getvalue('rating')
     return rating
 
-print("Content-type: text/html")
-print()
+print "Content-type: text/html"
+print
 htmlTop()
 rate = getData()
-print("you rated: " + rate)
+print "you rated {0}".format(rate)
 htmlBot()
