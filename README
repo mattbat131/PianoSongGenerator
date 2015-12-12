@@ -1,0 +1,21 @@
+Testing: 4 measures. 4/4 time. (1e&a)
+Final: Create 16-32 meausure song
+
+1) Generate Beat
+- Set where notes will be played (Binary) 0 = Rest 1 = Play
+- Set note accents
+- Set volume of each note
+
+2) Generate notes into beat
+- Select note A, B, C, D, E, F, G
+- Select octave 1-8
+- Select Sharp, Flat or none
+- Select high weighted patternes
+
+3) Get user opinion
+- Scale 0-10
+
+4) Find repeated patterns in different songs
+- Weight patternes based on user score and prevalance 
+
+
