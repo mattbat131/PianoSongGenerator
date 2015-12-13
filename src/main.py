@@ -13,7 +13,7 @@ import pyaudio
 from random import randint
 import random
 import codecs
-
+from noise import pnoise1
 
 Base = declarative_base()
 
@@ -41,8 +41,8 @@ class Beat:
         self.beat = list()
         for i in range(64):
             #generate beat
-            play_sound = randint(0, 1)
-            amplitude = randint(1, 100)
+            play_sound = pnoise1(0, 1)
+            amplitude = pnoise1(1, 100)
             duration = random.uniform(.01, 1)
             self.beat.append((play_sound, amplitude, duration))
 
@@ -55,7 +55,7 @@ class Sound():
         self.sound = list()
         for beat in b.beat:
             #generate notes
-            frequency = randint(1000, 5000)
+            frequency = pnoise1(1000, 5000)
             self.sound.append((frequency, beat))
 
 
@@ -94,7 +94,7 @@ def play_tone(frequency, amplitude, duration, fs, stream):
 
 
 def get_rank():
-    rank = input("You like it???? [0-10] plz:")
+    rank = input("You like it???? rate me [0-10] plz: ")
     return rank
 
 
